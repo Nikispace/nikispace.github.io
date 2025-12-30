@@ -1,54 +1,110 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background: radial-gradient(circle, #1a1a2e, #16213e);
+:root {
+    --bg-color: #0a0a0c;
+    --text-primary: #ffffff;
+    --text-secondary: #8b8b8f;
+    --accent: #00f2ff; /* Electric Cyan */
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+* { margin: 0; padding: 0; box-box: border-box; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Precision Gradient Background */
+.gradient-bg {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% 50%, #16161d 0%, #0a0a0c 100%);
+    z-index: -1;
+}
+
+/* Sticky Header */
+.sticky-nav {
+    position: sticky;
+    top: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 1.5rem 5%;
+    background: rgba(10, 10, 12, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+    transition: all 0.4s ease;
+}
+
+/* Hero Section */
+.hero {
+    height: 90vh;
+    display: flex;
     align-items: center;
+    padding: 0 10%;
+}
+
+.role-tag { color: var(--accent); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 1rem; }
+
+.hero h1 { font-size: clamp(3rem, 8vw, 6rem); font-weight: 800; line-height: 1.1; }
+.hero h1 span { color: transparent; -webkit-text-stroke: 1px var(--text-primary); opacity: 0.7; }
+
+/* Bento Grid */
+.work-section { padding: 5rem 10%; }
+.section-title { font-size: 0.9rem; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 3rem; }
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 300px;
+    gap: 1.5rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
     overflow: hidden;
-    font-family: 'Segoe UI', sans-serif;
+    transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-.glass-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    padding: 40px;
-    text-align: center;
-    color: white;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    z-index: 10;
+.project-card.large { grid-column: span 2; }
+.project-card:hover { 
+    transform: translateY(-10px); 
+    border-color: var(--accent);
+    box-shadow: 0 10px 40px rgba(0, 242, 255, 0.1);
 }
 
-.glow-text {
-    text-shadow: 0 0 10px #00d2ff, 0 0 20px #00d2ff;
-    font-size: 3rem;
-}
+.tech-stack { font-size: 0.7rem; color: var(--text-secondary); }
 
-button {
-    background: #00d2ff;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 50px;
-    color: #1a1a2e;
+/* Magnetic CTA Style */
+.main-cta {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    text-decoration: none;
     font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.3s;
+    border-radius: 4px;
+    transition: all 0.3s;
 }
 
-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px #00d2ff;
+.main-cta:hover { background: var(--accent); color: var(--bg-color); }
+
+/* Scroll reveal class */
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
 }
-.trail {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background: #00d2ff;
-    border-radius: 50%;
-    pointer-events: none;
-    animation: fade 1s forwards;
+
+[data-reveal].visible {
+    opacity: 1;
+    transform: translateY(0);
 }
-@keyframes fade { to { opacity: 0; transform: scale(3); } }
