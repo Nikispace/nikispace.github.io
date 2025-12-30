@@ -6,10 +6,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (gallery1) {
     const images1 = [
-      "yourImage1.JPEG",
-      "yourImage2.JPEG",
-      "yourImage3.JPEG"
-      // Add all your uploaded filenames here
+      "aesthetic1.JPEG",
+      "Article1.JPEG",
+      "Aritcle2.JPEG"
+      "bird&cloud.JPEG"
+      "Bird11.JPEG"
+      "Bird2.JPEG"
+      "Cloud1.JPEG"
+      "Cloud2.JPEG"
+      "Cloud3.JPEG"
+      "Blurtree.JPEG"
+      "flower1.JPEG"
+      "flower2.JPEG"
+      "Spider1.JPEG"
+      "Spider2.JPEG"
+      "Spider3.JPEG"
+      "Sun.JPEG"
+      "sunset1.JPEG"
+      "Tree1.JPEG"
+      "Way1.JPEG"
+      "Way2.JPEG"
+      "Workdesk1.JPEG"
+      "Workdesk2.JPEG"
+      "Workdesk3.JPEG"
     ];
 
     images1.forEach(file => {
@@ -27,10 +46,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (gallery2) {
     const images2 = [
-      "yourImage1.JPEG",
-      "yourImage2.JPEG",
-      "yourImage3.JPEG"
-      // Add all your uploaded filenames here
+      "1.JPEG",
+      "2.JPEG",
+      "3.JPEG"
+      "4.JPEG"
+      "5.JPEG"
+      "6.JPEG"
+      "7.JPEG"
+      "8.JPEG"
+      "9.JPEG"
+      "10.JPEG"
+      "11.JPEG"
+      "12.JPEG"
+      "13.JPEG"
+      "14.JPEG"
+      "15.JPEG"
+      "16.JPEG"
+      "17.JPEG"
+      "18.JPEG"
+      "19.JPEG"
+      "20.JPEG"
     ];
 
     images2.forEach(file => {
@@ -66,3 +101,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
